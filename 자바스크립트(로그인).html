@@ -1,0 +1,63 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>자바스크립트</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Javascript -->
+    <!-- 바디안에서 작성한다. (브라우저가 렌더링이 완료된 상태에서 스크립트가 실행됨)
+      <script type="text/javascript" src="js/my-script.js"></script>
+    -->
+    <script type="text/javascript">
+        function loginCheck() {
+            var id = document.getElementById("id");
+            var pw = document.getElementById("password");
+
+            if(id.value == ""){
+                alert("아이디를 입력하세요..!!");
+                id.focus();
+                return ;
+            }
+            else if(pw.value == ""){
+                alert("비밀번호를 입력하세요..!!");
+                pw.focus();
+                return ;
+            }
+            else if(id.value == "maeng2418@naver.com" && pw.value == "1234"){
+                alert("로그인되었습니다.");
+                return ;
+            }
+            else {
+                alert("로그인 실패");
+                return ;
+            }
+        }
+    </script>
+  </head>
+
+  <body>
+    <div class="container" style="position: absolute; top:40%; left: 50%; transform: translate(-50%, -50%); width:40%;">
+      <form class="form-signin">
+        <h2>로그인</h2>
+        <input type="email" class="form-control" placeholder="abcd@example.com" required autofocus id="id">
+        <input type="password" class="form-control" placeholder="Password" required id="password">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="loginCheck()">로그인</button>
+        <a href="./회원가입.html" class="btn btn-lg btn-success btn-block">회원가입</a>
+      </form>
+    </div> 
+  </body>
+</html>
